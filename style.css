@@ -93,7 +93,8 @@ header.site-header {
     transition: color 0.2s;
 }
 
-.header-nav a:hover {
+.header-nav a:hover,
+.header-nav a.active {
     color: var(--primary);
 }
 
