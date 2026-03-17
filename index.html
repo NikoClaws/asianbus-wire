@@ -12,36 +12,17 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://asianbus.com/">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://asianbus.com/">
     <meta property="og:title" content="AsianBus Wire | Breaking K-Pop News & Updates">
     <meta property="og:description" content="Your #1 source for breaking K-Pop news, dating rumors, controversy, and celebrity updates.">
     <meta property="og:image" content="https://asianbus.com/images/bts-concert.jpg">
-    <meta property="og:site_name" content="AsianBus Wire">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://asianbus.com/">
     <meta name="twitter:title" content="AsianBus Wire | Breaking K-Pop News & Updates">
     <meta name="twitter:description" content="Your #1 source for breaking K-Pop news, dating rumors, controversy, and celebrity updates.">
-    <meta name="twitter:image" content="https://asianbus.com/images/bts-concert.jpg">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "NewsMediaOrganization",
-        "name": "AsianBus Wire",
-        "url": "https://asianbus.com",
-        "logo": "https://asianbus.com/images/logo.png",
-        "description": "Breaking K-Pop news, dating rumors, controversy, and celebrity updates",
-        "sameAs": []
-    }
-    </script>
-    
-    <!-- AdSense Ready -->
-    <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
     
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
@@ -56,13 +37,13 @@
                 <div class="logo-icon">AB</div>
                 <div class="logo-text">
                     <h1>AsianBus Wire</h1>
-                    <span>K-Pop News Network</span>
+                    <span>K-POP NEWS NETWORK</span>
                 </div>
             </a>
             <nav class="header-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="breaking.html">Breaking</a>
-                <a href="dating.html">Dating & Rumors</a>
+                <a href="dating.html">Dating</a>
                 <a href="controversy.html">Controversy</a>
                 <a href="music.html">Music</a>
                 <a href="kdrama.html">K-Drama</a>
@@ -83,13 +64,8 @@
         </div>
     </div>
 
-    <!-- Ad Slot: Top Banner -->
-    <div class="ad-container ad-top" aria-label="Advertisement">
-        <!-- AdSense ad unit will go here -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    </div>
-
     <main>
+        <!-- Hero Section -->
         <section class="hero" aria-label="Featured stories">
             <div class="hero-main">
                 <img src="images/bts-concert.jpg" alt="BTS performing at concert in 2026" loading="eager">
@@ -98,173 +74,148 @@
                     <h2><a href="article7.html">BTS Concert Faces Bomb Threats As Police Announce Unprecedented Security Measures</a></h2>
                 </div>
             </div>
-            <div class="hero-sidebar">
-                <article class="hero-sidebar-item">
+            <div class="hero-secondary">
+                <article class="hero-card">
                     <img src="images/jungkook.jpg" alt="BTS Jungkook" loading="eager">
-                    <h3><a href="article9.html">Jungkook & Winter Dating Rumors Explode Online</a></h3>
+                    <div class="hero-card-content">
+                        <span class="category">Dating Rumors</span>
+                        <h3><a href="article9.html">Jungkook & Winter Dating Rumors Explode Online</a></h3>
+                    </div>
                 </article>
-                <article class="hero-sidebar-item">
-                    <img src="images/lesserafim.jpg" alt="LE SSERAFIM group photo" loading="eager">
-                    <h3><a href="article8.html">LE SSERAFIM Members Made "Uncomfortable" At Fan Event</a></h3>
+                <article class="hero-card">
+                    <img src="images/lesserafim.jpg" alt="LE SSERAFIM" loading="eager">
+                    <div class="hero-card-content">
+                        <span class="category">Controversy</span>
+                        <h3><a href="article8.html">LE SSERAFIM Made "Uncomfortable" At Fan Event</a></h3>
+                    </div>
                 </article>
-                <article class="hero-sidebar-item">
-                    <img src="images/enhypen.jpg" alt="ENHYPEN group photo" loading="lazy">
-                    <h3><a href="article1.html">ENHYPEN Crisis: Heeseung's Departure Shocks Fans</a></h3>
+                <article class="hero-card">
+                    <img src="images/enhypen.jpg" alt="ENHYPEN" loading="lazy">
+                    <div class="hero-card-content">
+                        <span class="category">Breaking</span>
+                        <h3><a href="article1.html">ENHYPEN Crisis: Heeseung's Departure Shocks Fans</a></h3>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <!-- Ad Slot: Mid Content -->
-        <div class="ad-container ad-mid" aria-label="Advertisement">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <!-- Ad Slot -->
+        <div class="ad-container" aria-label="Advertisement">
+            <span>Advertisement</span>
         </div>
 
-        <section class="section-header" id="latest">
-            <h2>Latest K-Pop News</h2>
-        </section>
+        <!-- Latest News Section -->
+        <div class="section-header">
+            <h2 class="section-title">Latest K-Pop News</h2>
+            <a href="breaking.html" class="see-more">See All →</a>
+        </div>
 
-        <section class="articles-grid" aria-label="Latest articles">
+        <section class="article-grid" aria-label="Latest articles">
             <article class="article-card">
-                <div class="image-wrapper">
-                    <img src="images/jungkook.jpg" alt="BTS Jungkook 2026" loading="lazy">
-                </div>
-                <div class="content">
+                <img src="images/jungkook.jpg" alt="BTS Jungkook 2026" loading="lazy">
+                <div class="article-card-content">
                     <span class="category">Trending</span>
-                    <h2><a href="article2.html">BTS Jungkook's "Personality Change" Sparks Heated Debate Among ARMYs</a></h2>
+                    <h3><a href="article2.html">BTS Jungkook's "Personality Change" Sparks Heated Debate Among ARMYs</a></h3>
                     <p class="excerpt">BTS's golden maknae finds himself at the center of controversy following a viral post...</p>
-                    <div class="meta"><time datetime="2026-03-17">March 17, 2026</time></div>
+                    <div class="meta">March 17, 2026</div>
                 </div>
             </article>
 
             <article class="article-card">
-                <div class="image-wrapper">
-                    <img src="images/tiffany.jpg" alt="Tiffany Young Girls Generation" loading="lazy">
-                </div>
-                <div class="content">
+                <img src="images/tiffany.jpg" alt="Tiffany Young Girls Generation" loading="lazy">
+                <div class="article-card-content">
                     <span class="category">Celebrity Wedding</span>
-                    <h2><a href="article3.html">Girls' Generation Tiffany Shows Off Wedding Ring With Byun Yo Han</a></h2>
+                    <h3><a href="article3.html">Girls' Generation Tiffany Shows Off Wedding Ring With Byun Yo Han</a></h3>
                     <p class="excerpt">Tiffany Young finally gives fans a glimpse of her stunning wedding ring...</p>
-                    <div class="meta"><time datetime="2026-03-17">March 17, 2026</time></div>
+                    <div class="meta">March 17, 2026</div>
                 </div>
             </article>
 
             <article class="article-card">
-                <div class="image-wrapper">
-                    <img src="images/illit.jpg" alt="ILLIT HYBE girl group" loading="lazy">
-                </div>
-                <div class="content">
+                <img src="images/newjeans.jpg" alt="NewJeans K-pop group" loading="lazy">
+                <div class="article-card-content">
                     <span class="category">Controversy</span>
-                    <h2><a href="article4.html">ILLIT Under Fire: Double Plagiarism Accusations From Fans</a></h2>
+                    <h3><a href="article4.html">ILLIT Under Fire: Double Plagiarism Accusations From BLACKPINK & NewJeans Fans</a></h3>
                     <p class="excerpt">HYBE's rookie group faces accusations of copying BLACKPINK and NewJeans...</p>
-                    <div class="meta"><time datetime="2026-03-17">March 17, 2026</time></div>
+                    <div class="meta">March 17, 2026</div>
                 </div>
             </article>
 
             <article class="article-card">
-                <div class="image-wrapper">
-                    <img src="images/eunwoo.jpg" alt="Cha Eunwoo ASTRO actor" loading="lazy">
-                </div>
-                <div class="content">
+                <img src="images/eunwoo.jpg" alt="Cha Eunwoo ASTRO" loading="lazy">
+                <div class="article-card-content">
                     <span class="category">Comeback</span>
-                    <h2><a href="article5.html">ASTRO's Cha Eunwoo Returns Amid Tax Evasion Scandal</a></h2>
+                    <h3><a href="article5.html">ASTRO's Cha Eunwoo Returns Amid Tax Evasion Scandal</a></h3>
                     <p class="excerpt">The "Face Genius" idol-actor makes his first public appearance since allegations...</p>
-                    <div class="meta"><time datetime="2026-03-17">March 17, 2026</time></div>
+                    <div class="meta">March 17, 2026</div>
                 </div>
             </article>
 
             <article class="article-card">
-                <div class="image-wrapper">
-                    <img src="images/treasure.jpg" alt="TREASURE YG Entertainment" loading="lazy">
-                </div>
-                <div class="content">
+                <img src="images/treasure.jpg" alt="TREASURE YG Entertainment" loading="lazy">
+                <div class="article-card-content">
                     <span class="category">Controversy</span>
-                    <h2><a href="article10.html">TREASURE Hyunsuk Under Fire for On-Camera Behavior</a></h2>
+                    <h3><a href="article10.html">TREASURE Hyunsuk Under Fire for On-Camera Behavior</a></h3>
                     <p class="excerpt">YG Entertainment idol faces criticism after new video surfaces...</p>
-                    <div class="meta"><time datetime="2026-03-17">March 17, 2026</time></div>
+                    <div class="meta">March 17, 2026</div>
                 </div>
             </article>
 
             <article class="article-card">
-                <div class="image-wrapper">
-                    <img src="images/enhypen.jpg" alt="ENHYPEN Heeseung departure" loading="lazy">
-                </div>
-                <div class="content">
+                <img src="images/enhypen.jpg" alt="ENHYPEN Heeseung" loading="lazy">
+                <div class="article-card-content">
                     <span class="category">Breaking News</span>
-                    <h2><a href="article1.html">ENHYPEN Crisis: Heeseung's Departure Sparks Massive Fan Movement</a></h2>
+                    <h3><a href="article1.html">ENHYPEN Crisis: Heeseung's Departure Sparks Massive Fan Movement</a></h3>
                     <p class="excerpt">The K-Pop world has been rocked by the sudden announcement...</p>
-                    <div class="meta"><time datetime="2026-03-17">March 17, 2026</time></div>
+                    <div class="meta">March 17, 2026</div>
                 </div>
             </article>
 
             <article class="article-card">
-                <div class="image-wrapper">
-                    <img src="images/lesserafim.jpg" alt="LE SSERAFIM fan event" loading="lazy">
-                </div>
-                <div class="content">
+                <img src="images/lesserafim.jpg" alt="LE SSERAFIM" loading="lazy">
+                <div class="article-card-content">
                     <span class="category">Controversy</span>
-                    <h2><a href="article8.html">LE SSERAFIM Made "Uncomfortable" During Fan Event</a></h2>
+                    <h3><a href="article8.html">LE SSERAFIM Made "Uncomfortable" During Fan Event</a></h3>
                     <p class="excerpt">Agency response to incident sparks fury among fans...</p>
-                    <div class="meta"><time datetime="2026-03-17">March 17, 2026</time></div>
+                    <div class="meta">March 17, 2026</div>
                 </div>
             </article>
 
             <article class="article-card">
-                <div class="image-wrapper">
-                    <img src="images/winter.jpg" alt="Winter aespa SM Entertainment" loading="lazy">
-                </div>
-                <div class="content">
+                <img src="images/winter.jpg" alt="Winter aespa" loading="lazy">
+                <div class="article-card-content">
                     <span class="category">Dating Rumors</span>
-                    <h2><a href="article9.html">Jungkook & aespa Winter's "Date Spot" Exposed</a></h2>
+                    <h3><a href="article9.html">Jungkook & aespa Winter's "Date Spot" Exposed</a></h3>
                     <p class="excerpt">Alleged evidence sparks heated debate among fans...</p>
-                    <div class="meta"><time datetime="2026-03-17">March 17, 2026</time></div>
-                </div>
-            </article>
-
-            <article class="article-card">
-                <div class="image-wrapper">
-                    <img src="images/blackpink.jpg" alt="BLACKPINK YG Entertainment" loading="lazy">
-                </div>
-                <div class="content">
-                    <span class="category">Awards</span>
-                    <h2><a href="article6.html">"K-Pop Demon Hunters" Wins Oscar Amid BTS Controversy</a></h2>
-                    <p class="excerpt">The 2026 Academy Awards delivered one of its most controversial moments...</p>
-                    <div class="meta"><time datetime="2026-03-17">March 17, 2026</time></div>
-                </div>
-            </article>
-
-            <article class="article-card">
-                <div class="image-wrapper">
-                    <img src="images/bts-group.jpg" alt="BTS group bomb threat concert" loading="lazy">
-                </div>
-                <div class="content">
-                    <span class="category">Breaking News</span>
-                    <h2><a href="article7.html">BTS Concert Faces Bomb Threats — Enhanced Security</a></h2>
-                    <p class="excerpt">Metal detectors will be installed at 30 entrances...</p>
-                    <div class="meta"><time datetime="2026-03-17">March 17, 2026</time></div>
+                    <div class="meta">March 17, 2026</div>
                 </div>
             </article>
         </section>
 
-        <!-- Ad Slot: Bottom -->
-        <div class="ad-container ad-bottom" aria-label="Advertisement">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <!-- Ad Slot -->
+        <div class="ad-container" aria-label="Advertisement">
+            <span>Advertisement</span>
         </div>
     </main>
 
     <footer class="site-footer">
-        <p>© 2026 AsianBus Wire | Breaking K-Pop News 24/7</p>
-        <nav aria-label="Footer navigation">
-            <a href="index.html">Home</a> |
-            <a href="breaking.html">Breaking</a> |
-            <a href="dating.html">Dating & Rumors</a> |
-            <a href="controversy.html">Controversy</a> |
-            <a href="music.html">Music</a> |
-            <a href="kdrama.html">K-Drama</a>
-        </nav>
-        <p class="disclaimer">AsianBus Wire is an entertainment news site. All images are property of their respective owners.</p>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-logo">AsianBus Wire</div>
+                <p class="footer-tagline">Your #1 Source for K-Pop News</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="breaking.html">Breaking</a>
+                <a href="dating.html">Dating & Rumors</a>
+                <a href="controversy.html">Controversy</a>
+                <a href="music.html">Music</a>
+                <a href="kdrama.html">K-Drama</a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AsianBus Wire. All rights reserved. All images are property of their respective owners.</p>
+            </div>
+        </div>
     </footer>
-
-    <!-- AdSense Script (replace with your actual script) -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </body>
 </html>
