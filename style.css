@@ -102,11 +102,13 @@ img {
     flex-direction: column;
 }
 
-.logo-text h1 {
-    font-size: 1.125rem;
-    font-weight: 800;
-    color: white;
-    line-height: 1.2;
+.logo-text h1,
+.site-header .logo-text h1 {
+    font-size: 1.125rem !important;
+    font-weight: 800 !important;
+    color: white !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
 }
 
 .logo-text span {
@@ -525,7 +527,7 @@ main {
     margin-bottom: 1rem;
 }
 
-.article-page h1 {
+.article-page .article-container h1 {
     font-size: 1.75rem;
     font-weight: 800;
     line-height: 1.25;
@@ -795,7 +797,7 @@ main {
         padding: 2.5rem 1.5rem 4rem;
     }
     
-    .article-page h1 {
+    .article-page .article-container h1 {
         font-size: 2.25rem;
     }
     
@@ -852,7 +854,7 @@ main {
         grid-template-columns: repeat(3, 1fr);
     }
     
-    .article-page h1 {
+    .article-page .article-container h1 {
         font-size: 2.5rem;
     }
     
