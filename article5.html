@@ -43,5 +43,25 @@
             <p class="tags">Tags: <a href="#">Cha Eunwoo</a>, <a href="#">ASTRO</a>, <a href="#">Tax Scandal</a>, <a href="#">K-Drama</a></p>
         </footer>
     </article>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <h3>💬 Comments</h3>
+        <div id="disqus_thread"></div>
+        <script>
+            var disqus_config = function () {
+                this.page.url = 'https://asianbus.com/article5.html';
+                this.page.identifier = 'article5';
+            };
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://asianbus.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
 </body>
 </html>
