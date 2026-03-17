@@ -2,6 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://asianbus.com/sitemap.xml
-
-# Crawl-delay for politeness
-Crawl-delay: 1
