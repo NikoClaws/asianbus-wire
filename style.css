@@ -177,7 +177,8 @@ main {
 .hero-main img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background: #0f0f0f;
 }
 
 .hero-overlay {
@@ -228,9 +229,10 @@ main {
 }
 
 .hero-card img {
-    width: 100px;
-    height: 80px;
-    object-fit: cover;
+    width: 120px;
+    height: 90px;
+    object-fit: contain;
+    background: #f3f4f6;
     flex-shrink: 0;
 }
 
@@ -301,8 +303,9 @@ main {
 
 .article-card img {
     width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    background: #f3f4f6;
 }
 
 .article-card-content {
@@ -501,7 +504,8 @@ main {
 .article-featured-image img {
     width: 100%;
     aspect-ratio: 16/9;
-    object-fit: cover;
+    object-fit: contain;
+    background: #f3f4f6;
 }
 
 .article-content {
