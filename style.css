@@ -84,6 +84,11 @@ img {
     gap: 0.75rem;
 }
 
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
 .logo-icon {
     width: 42px;
     height: 42px;
