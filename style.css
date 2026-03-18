@@ -85,8 +85,15 @@ img {
 }
 
 .logo-img {
-    height: 50px;
+    height: 55px;
     width: auto;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 45px;
+    }
 }
 
 .logo-icon {
