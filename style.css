@@ -85,13 +85,13 @@ img {
 }
 
 .logo-img {
-    height: 200px;
+    height: 250px;
     width: auto;
 }
 
 @media (max-width: 768px) {
     .logo-img {
-        height: 60px;
+        height: 100px;
     }
 }
 
