@@ -1008,7 +1008,7 @@ main {
     flex: 1;
 }
 
-.related-item .category {
+.article-page .related-item .category {
     font-size: 0.6rem;
     font-weight: 700;
     color: var(--primary);
@@ -1356,4 +1356,17 @@ img[loading="lazy"] {
         padding: 0.6rem 1rem;
         font-size: 0.8rem;
     }
+}
+
+/* Fix related item category badge */
+.article-page .related-articles .related-item .category {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary);
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0;
+    margin-bottom: 0.25rem;
 }
