@@ -12,20 +12,23 @@
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "306ce3c01b784017af54d50655769d2b"}'></script>
 </head>
 <body>
-    <header class="site-header">
+        <header class="site-header">
         <div class="header-top">
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="AsianBus K-Pop News" class="logo-img">
             </a>
-            <nav class="header-nav">
-                <a href="index.html">Home</a>
-                <a href="breaking.html">Breaking</a>
-                <a href="dating.html">Dating</a>
-                <a href="controversy.html">Controversy</a>
-                <a href="music.html" class="active">Music</a>
-                <a href="kdrama.html">K-Drama</a>
-            </nav>
+            <div class="header-search">
+                <input type="search" placeholder="Search K-Pop news..." id="search-input" autocomplete="off">
+            </div>
         </div>
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="breaking.html">Breaking</a>
+            <a href="dating.html">Dating</a>
+            <a href="controversy.html">Controversy</a>
+            <a href="music.html" class="active">Music</a>
+            <a href="kdrama.html">K-Drama</a>
+        </nav>
     </header>
 
     <main>
@@ -129,5 +132,16 @@
             <div class="footer-bottom"><p>© 2026 AsianBus News. All rights reserved.</p></div>
         </div>
     </footer>
+
+    <script>
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value.trim()) {
+                window.location.href = 'search.html?q=' + encodeURIComponent(this.value);
+            }
+        });
+    }
+    </script>
 </body>
 </html>

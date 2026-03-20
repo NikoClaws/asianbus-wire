@@ -6,93 +6,13 @@
     <title>Search Results | AsianBus News</title>
     <meta name="description" content="Search K-Pop news, dating rumors, controversies, and more on AsianBus News.">
     <meta name="robots" content="noindex">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9902886208446482" crossorigin="anonymous"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: #e5e5e5;
-            min-height: 100vh;
-        }
-        
-        /* Header */
-        .site-header {
-            background: linear-gradient(180deg, #111 0%, #0a0a0a 100%);
-            border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-top {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-        
-        .logo { text-decoration: none; display: flex; align-items: center; }
-        .logo-img { height: 36px; }
-        
-        .header-search {
-            flex: 1;
-            max-width: 500px;
-        }
-        
-        .header-search input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            border: 1px solid #333;
-            background: #1a1a1a;
-            color: #fff;
-            font-size: 0.95rem;
-            transition: all 0.2s;
-        }
-        
-        .header-search input:focus {
-            outline: none;
-            border-color: #ff2d55;
-            box-shadow: 0 0 0 3px rgba(255, 45, 85, 0.2);
-        }
-        
-        .header-nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            gap: 0.5rem;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
-        
-        .header-nav::-webkit-scrollbar { display: none; }
-        
-        .header-nav a {
-            color: #888;
-            text-decoration: none;
-            padding: 0.75rem 1rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            white-space: nowrap;
-            transition: color 0.2s;
-            border-bottom: 2px solid transparent;
-        }
-        
-        .header-nav a:hover { color: #fff; }
-        .header-nav a.active { color: #ff2d55; border-bottom-color: #ff2d55; }
-        
-        /* Search Page Specific */
+        /* Search Page Specific Styles */
         .search-container {
             max-width: 900px;
             margin: 0 auto;
@@ -139,7 +59,6 @@
             box-shadow: 0 0 0 4px rgba(255, 45, 85, 0.15);
         }
         
-        /* Filters */
         .search-filters {
             display: flex;
             gap: 0.5rem;
@@ -169,7 +88,6 @@
             color: #fff;
         }
         
-        /* Results */
         .search-results {
             display: flex;
             flex-direction: column;
@@ -248,7 +166,6 @@
             overflow: hidden;
         }
         
-        /* No Results */
         .no-results {
             text-align: center;
             padding: 4rem 2rem;
@@ -287,7 +204,6 @@
             color: #fff;
         }
         
-        /* Loading */
         .loading {
             text-align: center;
             padding: 2rem;
@@ -311,7 +227,6 @@
             to { transform: rotate(360deg); }
         }
         
-        /* Responsive */
         @media (max-width: 600px) {
             .result-card {
                 flex-direction: column;
@@ -320,16 +235,6 @@
             .result-image {
                 width: 100%;
                 height: 160px;
-            }
-            
-            .header-top {
-                flex-wrap: wrap;
-            }
-            
-            .header-search {
-                order: 3;
-                max-width: none;
-                width: 100%;
             }
         }
     </style>
@@ -387,7 +292,6 @@
             .then(res => res.json())
             .then(data => {
                 articles = data;
-                // Check for query param
                 const urlParams = new URLSearchParams(window.location.search);
                 const query = urlParams.get('q') || '';
                 if (query) {
@@ -403,7 +307,6 @@
                     '<div class="no-results"><h2>Error loading articles</h2><p>Please try again later.</p></div>';
             });
         
-        // Search input handlers
         const searchInput = document.getElementById('search-input');
         const headerSearchInput = document.getElementById('header-search-input');
         
@@ -431,7 +334,6 @@
             }
         });
         
-        // Filter handlers
         document.getElementById('filters').addEventListener('click', (e) => {
             if (e.target.classList.contains('filter-btn')) {
                 document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -467,7 +369,6 @@
                 return matchesTerms && matchesFilter;
             });
             
-            // Sort by relevance (title matches rank higher)
             results.sort((a, b) => {
                 const aTitle = a.title.toLowerCase();
                 const bTitle = b.title.toLowerCase();
@@ -498,7 +399,6 @@
             }
             
             container.innerHTML = '<div class="search-results">' + results.map(article => {
-                // Highlight matching terms in title
                 let highlightedTitle = article.title;
                 terms.forEach(term => {
                     const regex = new RegExp(`(${escapeRegex(term)})`, 'gi');
@@ -520,8 +420,7 @@
         
         function showTrendingSearches() {
             const container = document.getElementById('results-container');
-            const countDisplay = document.getElementById('results-count');
-            countDisplay.textContent = '';
+            document.getElementById('results-count').textContent = '';
             
             container.innerHTML = `
                 <div class="no-results">

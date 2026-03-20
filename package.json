@@ -1,0 +1,23 @@
+{
+  "name": "kpop-news",
+  "version": "1.0.0",
+  "description": "",
+  "main": "batch-update-articles.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikoClaws/asianbus-wire.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikoClaws/asianbus-wire/issues"
+  },
+  "homepage": "https://github.com/NikoClaws/asianbus-wire#readme",
+  "devDependencies": {
+    "wrangler": "^4.76.0"
+  }
+}
