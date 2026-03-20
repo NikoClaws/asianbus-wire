@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results | AsianBus News</title>
+    <meta name="description" content="Search K-Pop news, dating rumors, controversies, and more on AsianBus News.">
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        .site-header {
+            background: linear-gradient(180deg, #111 0%, #0a0a0a 100%);
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-top {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .logo { text-decoration: none; display: flex; align-items: center; }
+        .logo-img { height: 36px; }
+        
+        .header-search {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .header-search input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+        
+        .header-search input:focus {
+            outline: none;
+            border-color: #ff2d55;
+            box-shadow: 0 0 0 3px rgba(255, 45, 85, 0.2);
+        }
+        
+        .header-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        
+        .header-nav::-webkit-scrollbar { display: none; }
+        
+        .header-nav a {
+            color: #888;
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: color 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .header-nav a:hover { color: #fff; }
+        .header-nav a.active { color: #ff2d55; border-bottom-color: #ff2d55; }
+        
+        /* Search Page Specific */
+        .search-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        
+        .search-header {
+            margin-bottom: 2rem;
+        }
+        
+        .search-header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .search-header h1 span {
+            color: #ff2d55;
+        }
+        
+        .search-meta {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .search-box {
+            margin-bottom: 2rem;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            border: 2px solid #333;
+            background: #111;
+            color: #fff;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #ff2d55;
+            box-shadow: 0 0 0 4px rgba(255, 45, 85, 0.15);
+        }
+        
+        /* Filters */
+        .search-filters {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid #333;
+            background: transparent;
+            color: #888;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .filter-btn:hover {
+            border-color: #ff2d55;
+            color: #ff2d55;
+        }
+        
+        .filter-btn.active {
+            background: #ff2d55;
+            border-color: #ff2d55;
+            color: #fff;
+        }
+        
+        /* Results */
+        .search-results {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .result-card {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: #111;
+            border-radius: 12px;
+            border: 1px solid #222;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+        
+        .result-card:hover {
+            border-color: #ff2d55;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        
+        .result-image {
+            width: 120px;
+            height: 90px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: #222;
+        }
+        
+        .result-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .result-category {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background: rgba(255, 45, 85, 0.15);
+            color: #ff2d55;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-title {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 0.4rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .result-title mark {
+            background: rgba(255, 45, 85, 0.3);
+            color: #fff;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+        
+        .result-excerpt {
+            font-size: 0.85rem;
+            color: #888;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #666;
+        }
+        
+        .no-results h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #888;
+        }
+        
+        .no-results p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .trending-searches {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .trending-searches a {
+            padding: 0.5rem 1rem;
+            background: #1a1a1a;
+            border-radius: 20px;
+            color: #ff2d55;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        
+        .trending-searches a:hover {
+            background: #ff2d55;
+            color: #fff;
+        }
+        
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+        
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+            border-top-color: #ff2d55;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .result-card {
+                flex-direction: column;
+            }
+            
+            .result-image {
+                width: 100%;
+                height: 160px;
+            }
+            
+            .header-top {
+                flex-wrap: wrap;
+            }
+            
+            .header-search {
+                order: 3;
+                max-width: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="AsianBus K-Pop News" class="logo-img">
+            </a>
+            <div class="header-search">
+                <input type="search" placeholder="Search K-Pop news..." id="header-search-input" autocomplete="off">
+            </div>
+        </div>
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="breaking.html">Breaking</a>
+            <a href="dating.html">Dating</a>
+            <a href="controversy.html">Controversy</a>
+            <a href="music.html">Music</a>
+            <a href="kdrama.html">K-Drama</a>
+        </nav>
+    </header>
+
+    <main class="search-container">
+        <div class="search-header">
+            <h1>Search Results <span id="query-display"></span></h1>
+            <p class="search-meta" id="results-count"></p>
+        </div>
+        
+        <div class="search-box">
+            <input type="search" placeholder="Search articles, artists, topics..." id="search-input" autocomplete="off" autofocus>
+        </div>
+        
+        <div class="search-filters" id="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Breaking News">Breaking</button>
+            <button class="filter-btn" data-filter="Dating">Dating</button>
+            <button class="filter-btn" data-filter="Controversy">Controversy</button>
+            <button class="filter-btn" data-filter="Music">Music</button>
+            <button class="filter-btn" data-filter="K-Drama">K-Drama</button>
+        </div>
+        
+        <div id="results-container">
+            <div class="loading">Loading articles</div>
+        </div>
+    </main>
+
+    <script>
+        let articles = [];
+        let currentFilter = 'all';
+        
+        // Load search index
+        fetch('search-index.json')
+            .then(res => res.json())
+            .then(data => {
+                articles = data;
+                // Check for query param
+                const urlParams = new URLSearchParams(window.location.search);
+                const query = urlParams.get('q') || '';
+                if (query) {
+                    document.getElementById('search-input').value = query;
+                    document.getElementById('header-search-input').value = query;
+                    performSearch(query);
+                } else {
+                    showTrendingSearches();
+                }
+            })
+            .catch(err => {
+                document.getElementById('results-container').innerHTML = 
+                    '<div class="no-results"><h2>Error loading articles</h2><p>Please try again later.</p></div>';
+            });
+        
+        // Search input handlers
+        const searchInput = document.getElementById('search-input');
+        const headerSearchInput = document.getElementById('header-search-input');
+        
+        let debounceTimer;
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                const query = e.target.value.trim();
+                headerSearchInput.value = query;
+                if (query.length >= 2) {
+                    performSearch(query);
+                    updateURL(query);
+                } else if (query.length === 0) {
+                    showTrendingSearches();
+                    updateURL('');
+                }
+            }, 200);
+        });
+        
+        headerSearchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchInput.value = e.target.value;
+                performSearch(e.target.value.trim());
+                updateURL(e.target.value.trim());
+            }
+        });
+        
+        // Filter handlers
+        document.getElementById('filters').addEventListener('click', (e) => {
+            if (e.target.classList.contains('filter-btn')) {
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                currentFilter = e.target.dataset.filter;
+                performSearch(searchInput.value.trim());
+            }
+        });
+        
+        function updateURL(query) {
+            const url = query ? `?q=${encodeURIComponent(query)}` : window.location.pathname;
+            history.replaceState(null, '', url);
+        }
+        
+        function performSearch(query) {
+            const container = document.getElementById('results-container');
+            const queryDisplay = document.getElementById('query-display');
+            const countDisplay = document.getElementById('results-count');
+            
+            queryDisplay.textContent = query ? `for "${query}"` : '';
+            
+            if (!query || query.length < 2) {
+                showTrendingSearches();
+                return;
+            }
+            
+            const terms = query.toLowerCase().split(/\s+/);
+            
+            let results = articles.filter(article => {
+                const searchText = (article.title + ' ' + article.excerpt + ' ' + article.category).toLowerCase();
+                const matchesTerms = terms.every(term => searchText.includes(term));
+                const matchesFilter = currentFilter === 'all' || article.category === currentFilter;
+                return matchesTerms && matchesFilter;
+            });
+            
+            // Sort by relevance (title matches rank higher)
+            results.sort((a, b) => {
+                const aTitle = a.title.toLowerCase();
+                const bTitle = b.title.toLowerCase();
+                const aInTitle = terms.every(t => aTitle.includes(t));
+                const bInTitle = terms.every(t => bTitle.includes(t));
+                if (aInTitle && !bInTitle) return -1;
+                if (bInTitle && !aInTitle) return 1;
+                return 0;
+            });
+            
+            countDisplay.textContent = `${results.length} article${results.length !== 1 ? 's' : ''} found`;
+            
+            if (results.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <h2>No results found</h2>
+                        <p>Try different keywords or browse by category</p>
+                        <div class="trending-searches">
+                            <a href="?q=BTS">BTS</a>
+                            <a href="?q=BLACKPINK">BLACKPINK</a>
+                            <a href="?q=dating">Dating</a>
+                            <a href="?q=scandal">Scandal</a>
+                            <a href="?q=comeback">Comeback</a>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = '<div class="search-results">' + results.map(article => {
+                // Highlight matching terms in title
+                let highlightedTitle = article.title;
+                terms.forEach(term => {
+                    const regex = new RegExp(`(${escapeRegex(term)})`, 'gi');
+                    highlightedTitle = highlightedTitle.replace(regex, '<mark>$1</mark>');
+                });
+                
+                return `
+                    <a href="${article.file}" class="result-card">
+                        <img src="${article.image}" alt="" class="result-image" loading="lazy" onerror="this.src='images/default.jpg'">
+                        <div class="result-content">
+                            <span class="result-category">${article.category}</span>
+                            <h3 class="result-title">${highlightedTitle}</h3>
+                            <p class="result-excerpt">${article.excerpt}</p>
+                        </div>
+                    </a>
+                `;
+            }).join('') + '</div>';
+        }
+        
+        function showTrendingSearches() {
+            const container = document.getElementById('results-container');
+            const countDisplay = document.getElementById('results-count');
+            countDisplay.textContent = '';
+            
+            container.innerHTML = `
+                <div class="no-results">
+                    <h2>🔥 Trending Searches</h2>
+                    <p>Start typing or try one of these popular searches</p>
+                    <div class="trending-searches">
+                        <a href="?q=BTS">BTS</a>
+                        <a href="?q=BLACKPINK">BLACKPINK</a>
+                        <a href="?q=ENHYPEN">ENHYPEN</a>
+                        <a href="?q=dating">Dating Rumors</a>
+                        <a href="?q=scandal">Scandal</a>
+                        <a href="?q=comeback">Comeback</a>
+                        <a href="?q=Netflix">Netflix</a>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function escapeRegex(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+    </script>
+</body>
+</html>
