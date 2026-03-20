@@ -1370,3 +1370,18 @@ img[loading="lazy"] {
     padding: 0;
     margin-bottom: 0.25rem;
 }
+
+/* Related article category badges - pink pill with white text */
+.article-page .related-articles .related-item .category,
+.related-item .category {
+    display: inline-block;
+    background: var(--primary);
+    color: white !important;
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    margin-bottom: 0.3rem;
+}
